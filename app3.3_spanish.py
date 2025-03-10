@@ -50,9 +50,9 @@ class GreetingHandler:
         
         # Greeting responses based on time of day
         self.time_based_responses = {
-            'morning': "¡Buenos días! ¿En qué puedo ayudarte con respecto a la seguridad social?",
-            'afternoon': "¡Buenas tardes! ¿En qué puedo ayudarte con respecto a la seguridad social?",
-            'evening': "¡Buenas noches! ¿En qué puedo ayudarte con respecto a la seguridad social?"
+            'morning': "¡Buenos días! ¿En qué puedo ayudarte con respecto a la Inteligencia Artificial en la Educación?",
+            'afternoon': "¡Buenas tardes! ¿En qué puedo ayudarte con respecto a la Inteligencia Artificial en la Educación?",
+            'evening': "¡Buenas noches! ¿En qué puedo ayudarte con respecto a la Inteligencia Artificial en la Educación?"
         }
         
         # Combined greeting patterns
@@ -113,7 +113,7 @@ def count_tokens(text):
     tokenizer = get_tokenizer()
     return len(tokenizer.encode(text))
 
-def get_pdf_files(directory="./pdf_files_seguridad_social"):
+def get_pdf_files(directory="./pdf_files"):
     pdf_dir = Path(directory)
     pdf_files = sorted(pdf_dir.glob("*.pdf"))
     if not pdf_files:
@@ -135,7 +135,7 @@ def load_documents():
         )
         
         loader = PyPDFDirectoryLoader(
-            path="./pdf_files_seguridad_social", 
+            path="./pdf_files", 
             silent_errors=True,
             recursive=False
         )
@@ -212,10 +212,10 @@ def normalize_spanish_text(text):
     return text.strip()
 
 # UI Setup remains unchanged
-st.set_page_config(layout="wide", page_title="Consulta Seguridad Social", page_icon="❓")
+st.set_page_config(layout="wide", page_title="Consulta Inteligencia Artificial en la Educación", page_icon="❓")
 st.image("ai-advisor-icon.svg", width=100)
-st.header("Sistema de Consulta de Documentos de Seguridad Social Mexicana")
-# st.title("Sistema de Consulta de Documentos de Seguridad Social Mexicana")
+st.header("Sistema de Consulta de Documentos de Inteligencia Artificial en la Educación")
+# st.title("Sistema de Consulta de Documentos de Inteligencia Artificial en la Educación")
 st.markdown("Este sistema analiza todos los documentos PDF en el directorio para proporcionar respuestas completas basadas en múltiples fuentes.")
 
 
@@ -224,7 +224,7 @@ st.markdown("Este sistema analiza todos los documentos PDF en el directorio para
 # with st.sidebar:
 #    st.image("ai-advisor-icon.svg", width=50)
 #    st.markdown("## 📖 About This App")
-#    st.write("Analyze and query Mexican social security documents.")
+#    st.write("Analyze and query AI in Education documents.")
 #    st.markdown("""
 #    ---
 #    **Author**: [Dr. Robert Hernández Martínez](https://www.credly.com/users/robert-hernandez.89bffe7b)  
@@ -282,12 +282,12 @@ with st.sidebar:
     with col1:
         st.image("ai-advisor-icon.svg", width=50)
     with col2:
-        st.markdown('<p class="sidebar-app-name">AI Chatbot Asesor de Pensiones IMSS</p>', unsafe_allow_html=True)
+        st.markdown('<p class="sidebar-app-name">Chatbot - Inteligencia Artificial en la Educación</p>', unsafe_allow_html=True)
     
     # About Section
     st.markdown('<div class="sidebar-section">', unsafe_allow_html=True)
     st.markdown("### 📖 About this App")
-    st.write("A powerful tool to analyze and query Mexican social security documents using advanced AI technology.")
+    st.write("A powerful tool to analyze and query AI in Education documents using advanced AI technology.")
     st.markdown('</div>', unsafe_allow_html=True)
     
     # Author Section
@@ -341,7 +341,7 @@ except Exception as e:
 # Prompt template remains unchanged
 prompt = ChatPromptTemplate.from_template("""
 Basado en la consulta específica sobre "{question}", analiza cuidadosamente 
-los siguientes extractos de documentos oficiales de seguridad social mexicana 
+los siguientes extractos de documentos sobre Inteligencia Artificial en la Educación 
 para proporcionar una respuesta completa y precisa.
 
 Instrucciones específicas:
@@ -448,7 +448,7 @@ if prompt1:
         else:
             st.warning("⚠️ Por favor, primero cargue los documentos usando el botón 'Cargar y Procesar Documentos'")
     elif not is_greeting:
-        st.warning("Por favor, formule una pregunta específica sobre seguridad social.")
+        st.warning("Por favor, formule una pregunta específica sobre Inteligencia Artificial en la Educación.")
 
 # Footer remains unchanged
 st.markdown("""
