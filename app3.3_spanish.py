@@ -317,7 +317,7 @@ with st.sidebar:
     # Footer
     st.markdown("""
         <div style="position: fixed; bottom: 0; padding: 1rem; text-align: center; font-size: 0.8rem; color: #6B7280;">
-            © 2024 AI Chatbot Asesor de Pensiones IMSS
+            © 2025 AI Chatbot Asesor de Pensiones IMSS
         </div>
     """, unsafe_allow_html=True)
 
